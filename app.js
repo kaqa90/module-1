@@ -1,31 +1,31 @@
 (function () {
 	'use strict';
 
-	angular.module('LunchCheck',[]).controller('LunchCheckController', LunchCheckController);
+	angular.module('module1App',[]).controller('LunchCheckController', LunchCheckController);
 
-	LunchCheckController.$inject =['$scope'];
+	LunchCheckController.$inject = ['$scope'];
 
 	function LunchCheckController ($scope){
 		$scope.dishes = '';
 		$scope.txtMsg = '';
-		$scope.fontStyle = {};
-		$scope.boxStyle = {};
+		$scope.fontColor = {};
+		$scope.boxColor = {};
 
 		$scope.checkItems = function () {
 
 			if($scope.dishes !== '') {
 				var count = $scope.dishes.split(',').length;
 				if(count > 0){
-					if(count <=3){
+					if(count <= 3){
 						$scope.txtMsg = 'Enjoy your Dishes';
 					}
 					else if(count > 3){
 						$scope.txtMsg = 'Too much Dishes'
 					}
-					$scope.fontStyle = {
+					$scope.fontColor= {
 						"color":"green"
 					};
-					$scope.boxStyle = {
+					$scope.boxColor = {
 						"border-color":"green"
 					};
 				}
@@ -39,10 +39,10 @@
 		}
 		var enterItems = function() {
 			$scope.txtMsg = 'Please enter data first';
-				$scope.fontStyle = {
+				$scope.fontColor = {
 					"color":"red"
 				};
-				$scope.boxStyle = {
+				$scope.boxColor = {
 					"border-color":"red"
 				};
 		};
